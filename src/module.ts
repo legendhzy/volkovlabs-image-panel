@@ -35,17 +35,17 @@ export const plugin = new PanelPlugin<PanelOptions>(ImagePanel).setNoPadding().s
 
     .addFieldNamePicker({
       path: 'description',
-      name: 'Field description',
-      description: `Name of the field with file description. If not specified, the description won't be shown.`,
+      name: 'フィールドの説明',
+      description: `ファイルの説明を含むフィールドの名前。指定されていない場合、説明は表示されません。`,
       settings: {
         filter: (f: Field) => f.type === FieldType.string,
-        noFieldsMessage: 'No strings fields found',
+        noFieldsMessage: '文字列フィールドが見つかりません',
       },
     })
     .addTextInput({
       path: 'noResultsMessage',
-      name: 'No Results Message',
-      description: 'Specifies no results message text.',
+      name: '検索結果なしメッセージ',
+      description: '検索結果がない場合に表示するメッセージを指定します。',
       defaultValue: DEFAULT_OPTIONS.noResultsMessage,
     });
 
@@ -79,10 +79,10 @@ export const plugin = new PanelPlugin<PanelOptions>(ImagePanel).setNoPadding().s
       path: 'name',
       name: 'Field name',
       description:
-        'Name of the field with encoded image, video, audio or PDF. If not specified, first field will be taken. Third priority',
+        'エンコードされた画像、ビデオ、音声、またはPDFを含むフィールドの名前。指定されていない場合、最初のフィールドが使用されます。第三の優先度です。',
       settings: {
         filter: (f: Field) => f.type === FieldType.string,
-        noFieldsMessage: 'No strings fields found',
+        noFieldsMessage: '文字列フィールドが見つかりません',
       },
       category: ['Source'],
     });
